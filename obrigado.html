@@ -1,24 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Pagamento aprovado</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Pagamento</title>
+  <link rel="stylesheet" href="form.css">
 </head>
 <body>
 
   <div class="card">
-    <h1>✅ Pagamento aprovado</h1>
-    <p>
-      Para entrar no grupo, clique no botão abaixo e
-      envie seu <b>nome do pagador</b>.
-    </p>
+    <h1>Confirmação de Pagamento</h1>
+    <p>Preencha os dados abaixo para que possamos liberar seu acesso ao grupo.</p>
 
-    <a class="botao"
-       href="https://wa.me/55628519-9014?text=Oi,+acabei+de+fazer+o+pagamento.+Nome+do+pagador:+____">
-       SOLICITAR ENTRADA NO GRUPO
-    </a>
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="tel" id="whatsapp" placeholder="Seu WhatsApp" required>
+
+    <button class="botao" onclick="enviarWhatsApp()">Enviar</button>
+
+    <p style="margin-top:15px;font-size:14px;">
+      Após enviar, mande o comprovante na conversa do WhatsApp.
+    </p>
   </div>
+
+  <script>
+    function enviarWhatsApp() {
+      const nome = document.getElementById("nome").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+
+      if (!nome || !whatsapp) {
+        alert("Preencha todos os campos");
+        return;
+      }
+
+      const numeroDono = "556285199014"; // Ex: 5511999999999
+
+      const mensagem =
+        `Olá! Já realizei o pagamento.%0A%0A` +
+        `Nome: ${nome}%0A` +
+        `WhatsApp: ${whatsapp}%0A%0A` +
+        `Vou enviar o comprovante agora.`;
+
+      const url = `https://wa.me/${numeroDono}?text=${mensagem}`;
+      window.open(url, "_blank");
+    }
+  </script>
 
 </body>
 </html>

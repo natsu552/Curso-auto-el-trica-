@@ -1,28 +1,87 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #0f0f0f;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover; /* cobre toda a tela */
   color: white;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  line-height: 1.6;
+  padding: 20px;
 }
 
+/* Card principal */
 .card {
-  background: #1a1a1a;
+  background: #1a1a1a; /* fundo do card */
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 14px;
   text-align: center;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.botao {
-  display: block;
-  margin-top: 20px;
-  padding: 15px;
-  background: #ff7a00;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
+/* Títulos */
+h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
 }
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Parágrafos */
+p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Botões (pagar / fale conosco) */
+.botao {
+  display: inline-block;
+  padding: 16px 25px;
+  background: #ff7a00; /* laranja */
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: #e56b00; /* laranja mais escuro ao passar o mouse */
+}
+
+/* Responsividade no celular */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .botao {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
