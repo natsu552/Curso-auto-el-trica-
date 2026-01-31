@@ -11,9 +11,11 @@ body {
 .card {
   background: #1a1a1a;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  width: 300px;
+
+  width: 90%;
+  max-width: 420px;
 }
 
 .botao {
